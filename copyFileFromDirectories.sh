@@ -7,4 +7,4 @@ for i in $( ls );
    	done
 
 
-# Script to copy file containing the 500000 in each of the directory to the current directory
+# Script to copy file containing the name 500000 in each of the directory to the current directory
