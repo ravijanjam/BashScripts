@@ -1,0 +1,49 @@
+You are looking for the collection named :  Track
+file count: 1
+now running edmDumpEvent Content for file : /store/hidata/HIRun2013/PAMinBiasUPC/RECO/28Sep2013-v1/10000/001397FC-462D-E311-A034-782BCB3BCADD.root
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/slc6_amd64_gcc491/cms/cmssw/CMSSW_7_4_0_pre8/bin/slc6_amd64_gcc491/edmDumpEventContent", line 226, in <module>
+    raise RuntimeError, "Could not open file '%s'." % filename
+RuntimeError: Could not open file 'root://eoscms//eos/cms/store/hidata/HIRun2013/PAMinBiasUPC/RECO/28Sep2013-v1/10000/001397FC-462D-E311-A034-782BCB3BCADD.root?svcClass=default'.
+ 
+ 
+file count: 2
+now running edmDumpEvent Content for file : /store/hidata/HIRun2013/PAHighPt/RECO/28Sep2013-v1/10000/0006E29D-F02B-E311-8A9D-003048CB7A80.root
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/slc6_amd64_gcc491/cms/cmssw/CMSSW_7_4_0_pre8/bin/slc6_amd64_gcc491/edmDumpEventContent", line 226, in <module>
+    raise RuntimeError, "Could not open file '%s'." % filename
+RuntimeError: Could not open file 'root://eoscms//eos/cms/store/hidata/HIRun2013/PAHighPt/RECO/28Sep2013-v1/10000/0006E29D-F02B-E311-8A9D-003048CB7A80.root?svcClass=default'.
+ 
+ 
+file count: 3
+now running edmDumpEvent Content for file : /store/hidata/HIRun2013/PAHighPt/RECO/PromptReco-v1/000/209/846/00000/ECAC9C4B-095F-E211-9B60-00237DDBE0E2.root
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/slc6_amd64_gcc491/cms/cmssw/CMSSW_7_4_0_pre8/bin/slc6_amd64_gcc491/edmDumpEventContent", line 226, in <module>
+    raise RuntimeError, "Could not open file '%s'." % filename
+RuntimeError: Could not open file 'root://eoscms//eos/cms/store/hidata/HIRun2013/PAHighPt/RECO/PromptReco-v1/000/209/846/00000/ECAC9C4B-095F-E211-9B60-00237DDBE0E2.root?svcClass=default'.
+ 
+ 
+file count: 4
+now running edmDumpEvent Content for file : /store/hidata/HIRun2013/PAMinBiasUPC/RECO/PromptReco-v1/000/209/846/00000/800F8DAF-095F-E211-829B-001D09F24763.root
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/slc6_amd64_gcc491/cms/cmssw/CMSSW_7_4_0_pre8/bin/slc6_amd64_gcc491/edmDumpEventContent", line 226, in <module>
+    raise RuntimeError, "Could not open file '%s'." % filename
+RuntimeError: Could not open file 'root://eoscms//eos/cms/store/hidata/HIRun2013/PAMinBiasUPC/RECO/PromptReco-v1/000/209/846/00000/800F8DAF-095F-E211-829B-001D09F24763.root?svcClass=default'.
+ 
+ 
+file count: 5
+now running edmDumpEvent Content for file : /store/himc/Fall10/Hydjet_Bass_MinBias_2760GeV/GEN-SIM-RECODEBUG/START39_V7HI-v1/0002/46B060AD-C9FA-DF11-B18A-485B3919F121.root
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/slc6_amd64_gcc491/cms/cmssw/CMSSW_7_4_0_pre8/bin/slc6_amd64_gcc491/edmDumpEventContent", line 226, in <module>
+    raise RuntimeError, "Could not open file '%s'." % filename
+RuntimeError: Could not open file 'root://eoscms//eos/cms/store/himc/Fall10/Hydjet_Bass_MinBias_2760GeV/GEN-SIM-RECODEBUG/START39_V7HI-v1/0002/46B060AD-C9FA-DF11-B18A-485B3919F121.root?svcClass=default'.
+ 
+ 
+file count: 6
+now running edmDumpEvent Content for file : /store/user/davidlw/PPMinBias/PP2013_FlowCorr_PromptReco_MB_Gplus_v2/e1306249b702130f95e9f12ead4695ee/pp_MB_100_1_HW4.root
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/slc6_amd64_gcc491/cms/cmssw/CMSSW_7_4_0_pre8/bin/slc6_amd64_gcc491/edmDumpEventContent", line 226, in <module>
+    raise RuntimeError, "Could not open file '%s'." % filename
+RuntimeError: Could not open file 'root://eoscms//eos/cms/store/user/davidlw/PPMinBias/PP2013_FlowCorr_PromptReco_MB_Gplus_v2/e1306249b702130f95e9f12ead4695ee/pp_MB_100_1_HW4.root?svcClass=default'.
+ 
+ 
