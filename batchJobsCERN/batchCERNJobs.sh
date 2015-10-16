@@ -9,8 +9,14 @@ eval `scramv1 runtime -sh`
 echo "Hello World" 
 
 
+# Follow the link for more information
+# https://twiki.cern.ch/twiki/bin/view/Main/BatchJobs
+
 # Submit the job using the command 
-# bsub -R "pool > ^C000" -q 1nw -J job1 < yourScript.sh
+# bsub -R "pool > 3000" -q 1nw -J job1 < yourScript.sh
 
 # Check the status using and get the JobID
 # bjobs
+
+# Kill the jobs using 
+# bkill -J <JobID>
