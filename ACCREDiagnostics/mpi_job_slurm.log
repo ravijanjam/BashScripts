@@ -1,0 +1,5 @@
+vmp[1069-1071]
+srun: error: Couldn't find the specified plugin name for mpi/--mpi=pmi2 looking at all files
+srun: error: cannot find mpi plugin for mpi/--mpi=pmi2
+srun: error: cannot create mpi context for mpi/--mpi=pmi2
+srun: error: "--mpi=--mpi=pmi2" -- long invalid MPI type, --mpi=list for acceptable types.
