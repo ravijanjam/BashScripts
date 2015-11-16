@@ -5,6 +5,8 @@ if [ $# -ne 1 ]; then
 echo "Generates a dummy CSV file, set ranges accordingly for the \
       the parameters for which you would like to generate data "
 
+echo "NOTE : It takes a pretty long time to generate....."
+
 echo ;
 echo "The script spits out the time it took in generating data"
 
@@ -14,7 +16,7 @@ echo "Please run the script by providing the number of data points you would \
 	like to genereate | ./generateCSVData.sh 50 "
 echo "======================================================================="
 
-elif [ $1 -ge 0 ]; then 
+elif [ $1 -ge 1 ]; then 
 
 echo "Deleting the CSV Data file"
 rm CSVData.csv
@@ -24,7 +26,7 @@ echo "Height, Weight, Grade" > CSVData.csv
 
 START=$(date +%s)
 
-count=$1
+count=0
 while [ 1 ]
 do
 	height=${RANDOM}
@@ -36,7 +38,7 @@ do
 	fi 
 
 	# Generate the number of values 
-	if [ ${count} -eq 2 ]; then
+	if [ ${count} -eq $1 ]; then
 		break;
 	fi 
 done 
