@@ -12,13 +12,11 @@ echo "The number of Running CMS jobs as of the moment" ${nCMSRunningJobs}
 echo "The number of Pending CMS jobs as of the moment" ${nCMSPendingJobs}
 
 
-<<comment
+#<<comment
 clear;
-query=`sacct -a | grep -w cms | awk '{print $i}'`
-for i in $query;
+query=`sacct -a | grep -w cms | awk '{print $1}'`
+for i in ${query}
 do
-	echo "=========================="
-	echo -ne `scontrol show job $i`;
-	echo "=========================="
+	temp=`scontrol show job $i | grep -iw nodelist`
+	echo -ne $i, ${temp}\\r
 done
-comment
