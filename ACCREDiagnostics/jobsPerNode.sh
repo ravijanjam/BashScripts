@@ -50,4 +50,6 @@ P | (01) Count all the nodes that are not reachable, this can be
       problem when plotting, so exclude them in the JobsPerNode list
       based on the error i.e. add a condition in the if statement
 
+P | (02) Webpage : Implement the feature where nodes with same number 
+         of jobs are highlighted, a csv file generated
 '
