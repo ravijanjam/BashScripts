@@ -10,7 +10,7 @@ echo "This script gets the number of jobs running per node, free memory and Node
 echo "and writes to the file JobsPerNode.csv"
 echo "which can be found in the same directory"
 echo ;
-echo "The script takes about ~3min to run, go grab a coffee"
+echo "The script takes about ~10min to run, go grab a coffee"
 echo "or run in the background, as it has to query all the nodes"
 
 echo "To run the script, just do the following"
@@ -25,7 +25,10 @@ then
 rm JobsPerNode.csv
 echo "Node, Jobs, freeMemory" > JobsPerNode.csv
 
+# Give the path to the list of nodes
 nodeCount=`cat /usr/local/etc/x86.nodes | wc -l `
+
+# Counter for no jobs
 zeroJobs=0
 
 clear;
@@ -43,7 +46,7 @@ do
 		nodeSearch=`squeue | grep $i | wc -l`
 		freeMemory=`rsh $i free -m -g | awk 'FNR == 2 {print $3}'`
 		echo $i, ${nodeSearch},  ${freeMemory} >> JobsPerNode.csv
-		echo  "Querying into :" $i. 
+		echo  "Querying into :" $i
 		echo  "Completed so far : ${loopCount} "
 
 		tput cuu1 # move up by one line
