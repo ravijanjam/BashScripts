@@ -3,7 +3,6 @@
 if [ $# -ne 1 ]
 then
 
-
 START=$(date +%s)
 echo "========================================================================"
 echo "This script gets the number of jobs running per node, free memory and Node information "
@@ -35,20 +34,22 @@ clear;
 echo "Started at `date`"
 echo "Running .... please wait"
 echo "===================================================================="
-echo "The script takes about ~3min to run, go grab a coffee"
+echo "The script takes about ~10min to run, go grab a coffee"
 echo "or run in the background, as it has to query ${nodeCount} nodes"
 echo "===================================================================="
 echo ;
 
 loopCount=1
-for i in `cat /usr/local/etc/x86.nodes` 
+for i in `sort /usr/local/etc/x86.nodes` 
 do 
 		nodeSearch=`squeue | grep $i | wc -l`
 		freeMemory=`rsh $i free -m -g | awk 'FNR == 2 {print $3}'`
 		echo $i, ${nodeSearch},  ${freeMemory} >> JobsPerNode.csv
 		echo  "Querying into :" $i
-		echo  "Completed so far : ${loopCount} "
+		echo  "Nodes queried so far : ${loopCount} "
+		echo  "Populating the file JobsPerNode.csv...." 
 
+		tput cuu1 # move up by one line
 		tput cuu1 # move up by one line
 		tput cuu1 # move up by one line
 		#tput el # clear the line
