@@ -1,0 +1,2 @@
+*/1 * * * * lxplus0066.cern.ch /afs/cern.ch/user/r/rjanjam/www/EOSStorageMonitor.sh &> /afs/cern.ch/user/r/rjanjam/www/EOSStorageMonitor.txt
+
