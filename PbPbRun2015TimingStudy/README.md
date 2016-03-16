@@ -15,7 +15,8 @@ https://indico.cern.ch/event/503314/contribution/17/attachments/1235228/1813177/
 1. cmsrel CMSSW_7_5_8_patch3
 2. cd CMSSW_7_5_8_patch3
 3. cd src
-4. git clone <url of this repository>
+4. git clone https://github.com/ravijanjam/BashScripts.git
+   and navigate to cd BashScripts/PbPbRun2015TimingStudy
 5. cmsenv 
 6. cmsRun step3_RAW2DIGI_L1Reco_RECO.py 1>output.stderr 2>output.stdout
 7. ./PbPbRun2015TimingStudy.sh output.stdout > TimePerModule.txt
