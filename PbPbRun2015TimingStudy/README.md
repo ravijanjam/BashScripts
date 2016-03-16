@@ -1,5 +1,5 @@
 <snippet>
-  <content><![CDATA[
+  <content>
 # ${1:PbPb 2015 Timing Study }
 Scripts provided here help estimate the Timing Per Module for Timing Study at 
 Vanderbilt Tier2
@@ -23,6 +23,6 @@ https://indico.cern.ch/event/503314/contribution/17/attachments/1235228/1813177/
 
 An example TimePerModule_eg.txt is in the same directory. 
 cat TimePerModule_eg.txt and scroll to the bottom for Timing Information summary
-]]></content>
+</content>
   <tabTrigger>readme</tabTrigger>
 </snippet>
