@@ -1,6 +1,6 @@
 <snippet>
   <content>
-# ${1:PbPb 2015 Timing Study }
+# PbPb 2015 Timing Study 
 Scripts provided here help estimate the Timing Per Module for Timing Study at 
 Vanderbilt Tier2
 
