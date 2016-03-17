@@ -26,7 +26,13 @@ process.maxEvents = cms.untracked.PSet(
 )
 
 process.Timing =  cms.Service("Timing")
-#process.MessageLogger.destinations = cms.untracked.vstring("logFile.txt","cout")
+
+''' A more concise way of getting the Timing Information '''
+'''
+process.Timing = cms.Service("Timing", 
+	summaryOnly = cms.untracked.bool(True)	
+	)
+'''
 
 # Input source
 process.source = cms.Source("PoolSource",
