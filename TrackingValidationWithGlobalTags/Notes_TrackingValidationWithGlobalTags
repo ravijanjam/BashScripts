@@ -1,0 +1,20 @@
+
+These scripts are used for submitting jobs over lxplus for different global tags
+in different CMSSW Versions
+runJobs.sh
+submitScript.sh
+
+runJobs.sh takes the globa tag as the input with cmsDriver.py pulled from the 
+workflows :
+
+Data
+runTheMatrix.py -l 140.53
+
+MC
+runTheMatrix.py -l 145
+
+
+
+
+
+
