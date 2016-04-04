@@ -1,11 +1,12 @@
-
 These scripts are used for submitting jobs over lxplus for different global tags
 in different CMSSW Versions
 1. runJobs.sh
 2. submitScript.sh
 
+CHANGE THE PATH TO YOUR CURRENTWORKING DIRECTORY BEFORE RUNNING
 runJobs.sh takes the global tag as the input with cmsDriver.py pulled from the 
-workflows :
+workflows : 
+
 submitScript.sh has the runJobs as input with all the global tags so that all of them can be 
 submitted at once
 
