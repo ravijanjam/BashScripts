@@ -1,0 +1,76 @@
+# Conditions read from  CMS_CONDITIONS  via FrontierProd 
+%MSG-w QTestConfigure:  QualityTester:siStripQTesterHI@ctor  03-Apr-2016 21:39:24 CEST pre-events
+Warning, using default value for parameter minEntries with default_value: 0
+%MSG
+%MSG-w QTestConfigure:  QualityTester:siStripQTesterHI@ctor  03-Apr-2016 21:39:24 CEST pre-events
+Warning, using default value for parameter minEntries with default_value: 0
+%MSG
+%MSG-w QTestConfigure:  QualityTester:siStripQTesterHI@ctor  03-Apr-2016 21:39:24 CEST pre-events
+Warning, using default value for parameter minEntries with default_value: 0
+%MSG
+%MSG-w QTestConfigure:  QualityTester:muonSourcesQualityTests@ctor  03-Apr-2016 21:39:26 CEST pre-events
+Warning, using default value for parameter minEntries with default_value: 0
+%MSG
+%MSG-w QTestConfigure:  QualityTester:qTesterJet@ctor 03-Apr-2016 21:39:27 CEST  pre-events
+Warning, using default value for parameter minEntries with default_value: 0
+%MSG
+%MSG-w QTestConfigure:  QualityTester:qTesterJet@ctor 03-Apr-2016 21:39:27 CEST  pre-events
+Warning, using default value for parameter minEntries with default_value: 0
+%MSG
+%MSG-w QTestConfigure:  QualityTester:qTesterJet@ctor 03-Apr-2016 21:39:27 CEST  pre-events
+Warning, using default value for parameter minEntries with default_value: 0
+%MSG
+%MSG-w QTestConfigure:  QualityTester:qTesterMET@ctor 03-Apr-2016 21:39:27 CEST  pre-events
+Warning, using default value for parameter minEntries with default_value: 0
+%MSG
+%MSG-w QTestConfigure:  QualityTester:qTesterMET@ctor 03-Apr-2016 21:39:27 CEST  pre-events
+Warning, using default value for parameter minEntries with default_value: 0
+%MSG
+%MSG-w QTestConfigure:  QualityTester:qTesterMET@ctor 03-Apr-2016 21:39:27 CEST  pre-events
+Warning, using default value for parameter minEntries with default_value: 0
+%MSG
+03-Apr-2016 21:39:27 CEST  Initiating request to open file file:step2_inDQM.root
+03-Apr-2016 21:39:28 CEST  Successfully opened file file:step2_inDQM.root
+----- Begin Fatal Exception 03-Apr-2016 21:39:28 CEST-----------------------
+An exception of category 'FileReadError' occurred while
+   [0] Calling InputSource::readFile_
+   [1] Opening DQM Root file
+Exception Message:
+Input file file:step2_inDQM.root appears to be corrupted since it does not have the proper internal structure.
+ Check to see if the file was closed properly.
+----- End Fatal Exception -------------------------------------------------
+%MSG-e EcalDQM:  EcalDQMonitorClient:ecalMonitorClient@endJob  03-Apr-2016 21:39:28 CEST BeforeEvents
+Ecal Monitor Client: Exception in bookMEs @ IntegrityClient
+%MSG
+Warning in <TH1::TH1>: nbins is <=0 - set to nbins = 1
+
+
+A fatal system signal has occurred: segmentation violation
+The following is the call stack containing the origin of the signal.
+NOTE:The first few functions on the stack are artifacts of processing the signal and can be ignored
+
+Thread 2 (Thread 0x7fd03927f700 (LWP 5558)):
+#0  0x00007fd04d22937d in waitpid () from /lib64/libpthread.so.0
+#1  0x00007fd047acba37 in edm::service::cmssw_stacktrace_fork() () from /cvmfs/cms.cern.ch/slc6_amd64_gcc493/cms/cmssw/CMSSW_8_0_0_pre1/lib/slc6_amd64_gcc493/libFWCoreServices.so
+#2  0x00007fd047acc212 in edm::service::InitRootHandlers::stacktraceHelperThread() () from /cvmfs/cms.cern.ch/slc6_amd64_gcc493/cms/cmssw/CMSSW_8_0_0_pre1/lib/slc6_amd64_gcc493/libFWCoreServices.so
+#3  0x00007fd04d7a0ac0 in execute_native_thread_routine () from /cvmfs/cms.cern.ch/slc6_amd64_gcc493/external/gcc/4.9.3/lib64/libstdc++.so.6
+#4  0x00007fd04d221aa1 in start_thread () from /lib64/libpthread.so.0
+#5  0x00007fd04cf6e93d in clone () from /lib64/libc.so.6
+Thread 1 (Thread 0x7fd04b6e7a40 (LWP 2109)):
+#0  0x00007fd04cf65113 in poll () from /lib64/libc.so.6
+#1  0x00007fd047acc074 in full_read.constprop () from /cvmfs/cms.cern.ch/slc6_amd64_gcc493/cms/cmssw/CMSSW_8_0_0_pre1/lib/slc6_amd64_gcc493/libFWCoreServices.so
+#2  0x00007fd047acc2dc in edm::service::InitRootHandlers::stacktraceFromThread() () from /cvmfs/cms.cern.ch/slc6_amd64_gcc493/cms/cmssw/CMSSW_8_0_0_pre1/lib/slc6_amd64_gcc493/libFWCoreServices.so
+#3  0x00007fd047acc443 in sig_dostack_then_abort () from /cvmfs/cms.cern.ch/slc6_amd64_gcc493/cms/cmssw/CMSSW_8_0_0_pre1/lib/slc6_amd64_gcc493/libFWCoreServices.so
+#4  <signal handler called>
+#5  0x00007fd04457e870 in MonitorElement::Reset() () from /cvmfs/cms.cern.ch/slc6_amd64_gcc493/cms/cmssw/CMSSW_8_0_0_pre1/lib/slc6_amd64_gcc493/libDQMServicesCore.so
+#6  0x00007fd0320637a0 in DTSegmentAnalysisTest::performClientDiagnostic(DQMStore::IGetter&) () from /cvmfs/cms.cern.ch/slc6_amd64_gcc493/cms/cmssw/CMSSW_8_0_0_pre1/lib/slc6_amd64_gcc493/pluginDQMDTMonitorClient.so
+#7  0x00007fd032067f48 in DTSegmentAnalysisTest::dqmEndJob(DQMStore::IBooker&, DQMStore::IGetter&) () from /cvmfs/cms.cern.ch/slc6_amd64_gcc493/cms/cmssw/CMSSW_8_0_0_pre1/lib/slc6_amd64_gcc493/pluginDQMDTMonitorClient.so
+#8  0x00007fd044554be7 in DQMEDHarvester::endJob() () from /cvmfs/cms.cern.ch/slc6_amd64_gcc493/cms/cmssw/CMSSW_8_0_0_pre1/lib/slc6_amd64_gcc493/libDQMServicesCore.so
+#9  0x00007fd04f3f0088 in edm::Worker::endJob() () from /cvmfs/cms.cern.ch/slc6_amd64_gcc493/cms/cmssw/CMSSW_8_0_0_pre1/lib/slc6_amd64_gcc493/libFWCoreFramework.so
+#10 0x00007fd04f3f1960 in edm::WorkerManager::endJob(edm::ExceptionCollector&) () from /cvmfs/cms.cern.ch/slc6_amd64_gcc493/cms/cmssw/CMSSW_8_0_0_pre1/lib/slc6_amd64_gcc493/libFWCoreFramework.so
+#11 0x00007fd04f3a98c5 in edm::Schedule::endJob(edm::ExceptionCollector&) () from /cvmfs/cms.cern.ch/slc6_amd64_gcc493/cms/cmssw/CMSSW_8_0_0_pre1/lib/slc6_amd64_gcc493/libFWCoreFramework.so
+#12 0x00007fd04f321631 in edm::EventProcessor::endJob() () from /cvmfs/cms.cern.ch/slc6_amd64_gcc493/cms/cmssw/CMSSW_8_0_0_pre1/lib/slc6_amd64_gcc493/libFWCoreFramework.so
+#13 0x000000000040b97e in (anonymous namespace)::EventProcessorWithSentry::~EventProcessorWithSentry() ()
+#14 0x000000000040b4d3 in main ()
+
+A fatal system signal has occurred: segmentation violation
