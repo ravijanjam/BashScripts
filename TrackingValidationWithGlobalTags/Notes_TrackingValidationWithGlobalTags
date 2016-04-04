@@ -1,12 +1,21 @@
 
 These scripts are used for submitting jobs over lxplus for different global tags
 in different CMSSW Versions
-runJobs.sh
-submitScript.sh
+1. runJobs.sh
+2. submitScript.sh
 
-runJobs.sh takes the globa tag as the input with cmsDriver.py pulled from the 
+runJobs.sh takes the global tag as the input with cmsDriver.py pulled from the 
 workflows :
+submitScript.sh has the runJobs as input with all the global tags so that all of them can be 
+submitted at once
 
+Test Driving to check if the Workflows are running or not
+------------------------------
+./runJobs.sh <GlobalTag>
+
+
+Generating the Workflow
+------------------------------
 Data
 runTheMatrix.py -l 140.53
 
@@ -14,7 +23,26 @@ MC
 runTheMatrix.py -l 145
 
 
+Submit the Jobs to lxplus
+------------------------------
+bsub -R "pool > 12000" -q 8nh -J yourGlobalTag_1kEvents < submitScript.sh
+
+yourGlobalTag_1kEvents = name of the job
+Note : This command can be used to submit the jobs for this work
 
 
 
+General Instructions
+--------------------------------------------------------
+# Follow the link for more information
+# https://twiki.cern.ch/twiki/bin/view/Main/BatchJobs
+
+# Submit the job using the command 
+# bsub -R "pool > 3000" -q 1nw -J job1 < yourScript.sh
+
+# Check the status using and get the JobID
+# bjobs
+
+# Kill the jobs using 
+# bkill -J <JobID>
 
