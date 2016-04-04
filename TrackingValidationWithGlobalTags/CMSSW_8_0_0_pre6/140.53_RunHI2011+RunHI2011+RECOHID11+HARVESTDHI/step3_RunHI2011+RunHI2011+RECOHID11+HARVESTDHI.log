@@ -1,0 +1,64 @@
+ ################################################################### 
+ # WARNING: this module is deprecated.                             # 
+ # Please use CondCore.CondDB.CondDB_cfi.py                        # 
+ ################################################################### 
+# Conditions read from  CMS_CONDITIONS  via FrontierProd 
+Warning in <UnknownClass::SetDisplay>: DISPLAY not set, setting it to lxplus010.cern.ch:0.0
+%MSG-w QTestConfigure:  QualityTester:siStripQTesterHI@ctor  03-Apr-2016 21:33:41 CEST pre-events
+Warning, using default value for parameter minEntries with default_value: 0
+%MSG
+%MSG-w QTestConfigure:  QualityTester:siStripQTesterHI@ctor  03-Apr-2016 21:33:41 CEST pre-events
+Warning, using default value for parameter minEntries with default_value: 0
+%MSG
+%MSG-w QTestConfigure:  QualityTester:siStripQTesterHI@ctor  03-Apr-2016 21:33:41 CEST pre-events
+Warning, using default value for parameter minEntries with default_value: 0
+%MSG
+%MSG-w QTestConfigure:  QualityTester:muonSourcesQualityTests@ctor  03-Apr-2016 21:33:42 CEST pre-events
+Warning, using default value for parameter minEntries with default_value: 0
+%MSG
+%MSG-w QTestConfigure:  QualityTester:qTesterJet@ctor 03-Apr-2016 21:33:43 CEST  pre-events
+Warning, using default value for parameter minEntries with default_value: 0
+%MSG
+%MSG-w QTestConfigure:  QualityTester:qTesterJet@ctor 03-Apr-2016 21:33:43 CEST  pre-events
+Warning, using default value for parameter minEntries with default_value: 0
+%MSG
+%MSG-w QTestConfigure:  QualityTester:qTesterJet@ctor 03-Apr-2016 21:33:43 CEST  pre-events
+Warning, using default value for parameter minEntries with default_value: 0
+%MSG
+%MSG-w QTestConfigure:  QualityTester:qTesterMET@ctor 03-Apr-2016 21:33:43 CEST  pre-events
+Warning, using default value for parameter minEntries with default_value: 0
+%MSG
+%MSG-w QTestConfigure:  QualityTester:qTesterMET@ctor 03-Apr-2016 21:33:43 CEST  pre-events
+Warning, using default value for parameter minEntries with default_value: 0
+%MSG
+%MSG-w QTestConfigure:  QualityTester:qTesterMET@ctor 03-Apr-2016 21:33:43 CEST  pre-events
+Warning, using default value for parameter minEntries with default_value: 0
+%MSG
+03-Apr-2016 21:33:43 CEST  Initiating request to open file file:step2_inDQM.root
+03-Apr-2016 21:33:45 CEST  Successfully opened file file:step2_inDQM.root
+
+=============================================
+
+MessageLogger Summary
+
+ type     category        sev    module        subroutine        count    total
+ ---- -------------------- -- ---------------- ----------------  -----    -----
+    1 QTestConfigure       -w QualityTester:mu                       1        1
+    2 QTestConfigure       -w QualityTester:qT                       3        3
+    3 QTestConfigure       -w QualityTester:qT                       3        3
+    4 QTestConfigure       -w QualityTester:si                       3        3
+    5 fileAction           -s AfterModBeginStr                       2        2
+
+ type    category    Examples: run/evt        run/evt          run/evt
+ ---- -------------------- ---------------- ---------------- ----------------
+    1 QTestConfigure       pre-events                        
+    2 QTestConfigure       pre-events       pre-events       pre-events
+    3 QTestConfigure       pre-events       pre-events       pre-events
+    4 QTestConfigure       pre-events       pre-events       pre-events
+    5 fileAction           BeforeEvents     BeforeEvents     
+
+Severity    # Occurrences   Total Occurrences
+--------    -------------   -----------------
+Warning                10                  10
+System                  2                   2
+03-Apr-2016 21:34:14 CEST  Closed file file:step2_inDQM.root
