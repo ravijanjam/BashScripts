@@ -36,4 +36,4 @@ timeDiff=$(( $endTime - $startTime ))
 echo -e "It took $timeDiff seconds to run step 4\n\n"
 
 echo "====================================================================="
-echo -e " It took $(( $endTime - $STARTTIME)) to run all the 4 steps"
+echo -e " It took $(( $endTime - $STARTTIME)) seconds to run all the 4 steps"
