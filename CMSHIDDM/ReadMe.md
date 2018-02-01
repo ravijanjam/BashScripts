@@ -18,7 +18,7 @@ To identify the data sets used by CMS Heavy Ion, since HI Data Sets are not part
 | `queryFilter`| Which data sets should be searched for and matched by Popularity API and DAS Query |
 | `JSONTag` | An identifier for unique identification of JSON output files per query |
 
-The script [**genDDM.sh**](https://gitlab.com/KodeQuantum/BashScripts/blob/Scripts/CMSHIDDM/genDDM.sh) contains a list of examples. 
+The script [**genDDM.sh**](https://github.com/ravijanjam/BashScripts/blob/master/CMSHIDDM/genDDM.sh) contains a list of examples. 
 
 * Copy the webpage, `CMSHIDynamicDataManagement.html, Info_<JSONTag1>.json,..., Info_<JSONTagn>.json` and put it on a web server with appropriate permissions.
 
