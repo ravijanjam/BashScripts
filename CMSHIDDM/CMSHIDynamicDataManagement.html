@@ -1,0 +1,177 @@
+<html>
+
+<head>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+
+<style>
+ th{ background-color: #c699f7;}
+ table > tr > th:nth-child(1){width:5%;}
+ table > tr > td:nth-child(1){background-color:green;}
+ table, tr, th, td {border:1px solid; border-collapse:collapse;}
+
+ .slNo{width:25px;}
+ .dsn{width:500px;}
+ .nacc{width:50px;}
+ .totcpu{width:50px;}
+ .size{width:50px;}
+ #info td{border-color:white;}
+ th {height:45px; font-size:20px;}
+
+ tr.knz > td{
+	color:red;
+	background-color:#ffc1a0;
+	border-color:black;
+	font-weight:bold;
+	}
+
+ h1{
+	font-size:30px; 
+	color:blue; 
+	font-weight:bold;
+ }
+
+
+ h1{
+    background-color:#10064f;
+    color:white;
+    height:100px;
+    position:relative;
+ }
+ 
+ h1 > p {
+    position:absolute;
+    font-weight:bold;
+    font-size:40;
+ }
+
+p#thd{
+	//height:50px;
+	font-size:30;
+	font-weight:bold;
+}
+
+</style>
+</head>
+
+
+<body>
+
+<h1 id="hdr"> <p>CMS HI Popularity Data Sets for Dynamic Data Management (CMSHI-DDM)</p></h1><hr>
+
+<script>
+
+// table structure
+function tblStr(eID, yr){
+	console.log("year: " + yr);
+	return "<p id=\"thd\">" + yr + "</p><hr><br><table id=\"" + eID + "\"><tr><th>Sl</th><th>Data Set</th><th>nAccess</th><th>Total CPU</th><th>Size(TB)</th></tr></table><br><table id=\"info\"><tr><td width=\"150px\"></tr></table>";
+}
+
+/* 
+	Loop over the json files 
+	var fileList = ["Info_HIRun2015E.json", "Info_HIRun2015E.json"]
+	
+	$.each(fileList, function(i, v){
+		Function to :
+		populateInfo()	
+	})
+
+*/
+
+$.each(["Info_HI2013.json",	"Info_HIRun2015.json"], function(i, kfile){
+//$.each(["Info_HIRun2015.json", "Info_HIRun2016.json", "Info_HIRun2013.json"], function(i, kfile){
+
+	var cc2=0, cc=0;
+
+	console.log(i + kfile);
+
+
+	var elem = kfile.replace(/Info_HI(.*).json/, "t$1")
+	var yr = kfile.replace(/Info_HI(.*).json/, "$1")
+
+	console.log("element id: " + elem + "\t" + tblStr(elem, yr));
+	$(tblStr(elem, yr)).insertAfter("#hdr");
+	//$("table#" + elem).insertBefore("<h1>Stuff here</h1>");
+	$("#"+elem).css({"position":"relative"});
+	$.getJSON(kfile, function(){
+		console.log("success");}
+		).done(function(data){
+
+			console.log(data);
+			console.log(typeof(data));
+			
+			var spl = [], totSize=0;
+			$.each(data, function(a, info){
+				console.log(a + "\t" + info["DATASET_SIZE"]);
+
+
+				if (info["TOTCPU"]!=0) {
+					console.log("inside if");
+
+					spl.push(		
+							"<tr class=\"knz\"><td class=\"slNo\">" + "val" + 
+							"</td><td class=\"dsn\">"+ info["COLLNAME"]+
+							"</td><td class=\"nacc\">" + info["NACC"] + 
+							"</td><td class=\"totcpu\">" + info["TOTCPU"] + 
+							"</td><td class=\"size\">" + info["DATASET_SIZE"] + 
+							"</td></tr>"
+						);
+
+							     
+
+				}//close:if
+				else{
+
+					cc++;
+					console.log("inside else: " + cc);
+
+					console.log("elementid" + elem);
+					$("#"+elem).append(
+								"<tr><td class=\"slNo\">" + cc + 
+								"</td><td class=\"dsn\">"+ info["COLLNAME"]+
+								"</td><td class=\"nacc\">" + info["NACC"] + 
+								"</td><td class=\"totcpu\">" + info["TOTCPU"] + 
+								"</td><td class=\"size\">" + info["DATASET_SIZE"] + 
+								"</td></tr>"
+							     );
+
+					}
+
+				});	
+
+
+				$.each(spl, function(i, v){
+				
+					cc++;
+					//console.log("replaced by: " + v.replace(/val/, cc.toString()));
+					$("#" + elem).append(v.replace(/val/, cc.toString()));
+					cc2++;
+				});
+
+
+				var sElem = elem.replace(/t/, "s");
+				console.log(sElem);
+				$("<p id=\"" + sElem + "\"></p>").insertAfter($("#"+elem));
+
+				$("#"+sElem).empty().append("Number of UnAccessed Data Sets: " + (cc-cc2).toString() + "<br>" + 
+						    "Number of Accessed Data Sets: " + (cc2).toString() + "<br>" +
+						    "Total Size of the Data Sets: " + Math.floor(totSize*100)/100 + "TB<br>");
+
+				//$("#"+elem).css({"top":"fixed"});
+				var sT = $("#"+elem).css("top");
+				console.log("main table info: " + sT);
+				$("#"+sElem).css({"border-radius":"2px", "padding":"5px","width":"300px", "background-color":"#e0ff99"});
+
+			
+			});
+
+
+})//close:file loop
+
+
+</script>
+
+</body>
+</html>
