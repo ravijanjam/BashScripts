@@ -63,7 +63,7 @@ GenJulianDate(){
 	#echo "end of GenJulianDate"
 }
 
-func16(){
+getFileCount(){
 	
 	#rExt: desired extention list
 	#dSch: don't search in these directories
@@ -157,10 +157,15 @@ func16(){
 	#echo "Total number of files: "$nfiles
 	done
 
+	echo "Total number of files: "$gc >> fileInfo.dat
+	echo -e "Open the file: \e[1mfileInfo.dat\e[25m in the current directory to check the results"
+
 }
 
-# This order matters
-func16 rExt="gz" \
+# The order of key-value pairs matters
+
+# Eg 1
+getFileCount rExt="gz" \
        dExcl="data" \
        sDate=2012-01-01 \
        eDate=2018-02-15 \
@@ -173,5 +178,13 @@ func16 rExt="gz" \
        #iPath="/store/data/Run2015E/"
        #iPath="/store"
 
-echo "Total number of files: "$gc >> fileInfo.dat
-echo -e "Open the file: \e[1mfileInfo.dat\e[25m in the current directory to check the results"
+
+
+# Eg 2
+getFileCount rExt="root img tex" \
+       dExcl="data user" \
+       sDate=2012-01-01 \
+       eDate=2017-02-15 \
+       iPath="/store/user/"
+
+
