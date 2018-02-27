@@ -5,7 +5,7 @@ To loop through all the directories on the LServer and get the file count for a 
 **Output**
 Eg: ```file-extension list, excluded directories, startDate, endDate, starting path```
 
-The inputs to the file are the following and they have to be in the same order, and given as key-value pairs:
+The inputs to the file are the following and given as key-value pairs:
 
 | **Variable** | **Explanation** | **Example** |
 |--- |--- |---|
@@ -16,3 +16,5 @@ The inputs to the file are the following and they have to be in the same order, 
 |dExcl | Key words to exclude in the directory search path | ```logs videos``` |
 
 For a list of examples, scroll to the end of the [LStoreFileCount.sh](https://github.com/ravijanjam/BashScripts/blob/master/travLStore/LStoreFileCount.sh)
+
+**Note**: The order of the key-value pairs should be in the same sequence as given in the script. 
