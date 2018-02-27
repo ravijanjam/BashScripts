@@ -1,35 +1,9 @@
 #!/bin/bash
 
+# Remove the file into which the
+# results are populated 
 rm fileInfo.dat
 
-# Global Counter for all the files
-gc=0
-
-# Check date format
-checkDate(){
-
-	# Start Date
-	sD=$1
-
-	# End Date
-	eD=$2
-	GenJulianDate $sD
-	sjD=$gJD
-
-	GenJulianDate $eD
-	ejD=$gJD
-
-	if [[ $ejD -gt $sjD ]]
-	then
-		#echo "yes"
-		echo 1
-	else
-		echo -e "\e[5m\e[91m Ending date is before the starting date......!!\e[0m"
-		echo ;
-		exit 1
-	fi
-
-}
 
 # Recipe Used to Calculate Julian Date
 # http://aa.usno.navy.mil/faq/docs/JD_Formula.php
@@ -61,6 +35,35 @@ GenJulianDate(){
 	gJD=$jd
 
 	#echo "end of GenJulianDate"
+}
+
+# Global Counter for all the files
+gc=0
+
+# Check date format
+checkDate(){
+
+	# Start Date
+	sD=$1
+
+	# End Date
+	eD=$2
+	GenJulianDate $sD
+	sjD=$gJD
+
+	GenJulianDate $eD
+	ejD=$gJD
+
+	if [[ $ejD -gt $sjD ]]
+	then
+		#echo "yes"
+		echo 1
+	else
+		echo -e "\e[5m\e[91m Ending date is before the starting date......!!\e[0m"
+		echo ;
+		exit 1
+	fi
+
 }
 
 getFileCount(){
