@@ -15,3 +15,4 @@ The inputs to the file are the following and they have to be in the same order, 
 |eDate | Ending date | ```2019-12-01```|
 |dExcl | Key words to exclude in the directory search path | ```logs videos``` |
 
+For a list of examples, scroll to the end of the [LStoreFileCount.sh](https://github.com/ravijanjam/BashScripts/blob/master/travLStore/LStoreFileCount.sh)
