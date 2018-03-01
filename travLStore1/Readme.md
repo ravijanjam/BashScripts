@@ -1,6 +1,6 @@
 ### Counting files in any directory
 
-To loop through all the directories on the LServer and get the file count for a specific set of filters based on extensions type, date range and excluded directory list. The script also writes the output to *fileInfo.dat*, which can be scraped for any further information. 
+To loop through all the directories on the LServer and get the file count for a specific set of filters based on extensions type, date range and excluded directory list. 
 
 **Filters** :
 ```excluded directories, startDate, endDate, starting path```
