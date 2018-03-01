@@ -1,4 +1,4 @@
-### Counting files in any directory
+## Counting Files In Any Directory
 
 To loop through all the directories on the LServer and get the file count for a specific set of filters based on extensions type, date range and excluded directory list. 
 
