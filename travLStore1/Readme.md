@@ -26,8 +26,8 @@ png:9, size:0.117346 MB
 
 Path: /a3/b3/c3/d3
 
-*Explanation*: sh, C are the file-extensions in the particular Path, size: size of the all the files per extension, for example, if there are `/my/path{a.sh, b.sh}`, then all the files are counted and their sizes reported
 ```
+*Explanation*: sh, C are the file-extensions in the particular Path, size: size of the all the files per extension, for example, if there are `/my/path{a.sh, b.sh}`, then all the files are counted and their sizes reported
 
 For a list of examples, scroll to the end of the [script](https://github.com/ravijanjam/BashScripts/blob/master/travLStore1/fileExtPerDir1.sh)
 
