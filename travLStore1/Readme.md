@@ -25,7 +25,7 @@ Path: /a2/b2/c2/d2
 sh:1, size:0.00155735 MB        C:3, size:0.00381374 MB
 png:9, size:0.117346 MB
 
-Path: /home/bokadia/CMS/CMSHIResearch/pPbWithAndWithoutCuts
+Path: /a3/b3/c3/d3
 ```
 
 For a list of examples, scroll to the end of the [script](https://github.com/ravijanjam/BashScripts/blob/master/travLStore1/fileExtPerDir1.sh)
