@@ -1,6 +1,6 @@
 ## Folder Information based on Recursive Directory Traversal 
 
-To loop through all the directories on the LServer and get the file count for a specific set of filters based on extensions type, date range and excluded directory list. 
+To loop through all the directories starting from a given path and get the file count for a specific set of filters based on extensions type, date range and excluded directory list. 
 
 **Filters** :
 ```excluded directories, startDate, endDate, starting path```
@@ -25,6 +25,12 @@ sh:1, size:0.00155735 MB        C:3, size:0.00381374 MB
 png:9, size:0.117346 MB
 
 Path: /a3/b3/c3/d3
+no files, probably a directory 0
+
+===============================================
+total:342, size:3.3484057540 MB
+===============================================
+
 
 ```
 *Explanation*: sh, C are the file-extensions in the particular Path, size: size of the all the files per extension, for example, if there are `/my/path{a.sh, b.sh}`, then all the files are counted and their sizes reported
