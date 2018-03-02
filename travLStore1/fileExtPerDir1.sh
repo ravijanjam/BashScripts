@@ -86,12 +86,12 @@ func1(){
 	GenJulianDate $eD
 	ejD=$gJD
 
-	echo "from julian dates "$sjD, $ejD
+	#echo "from julian dates "$sjD, $ejD
 
 	# List of directories to be excluded from the search
-	eExcl=`sed -n 's/eExcl=\(.*\)/\1/p' <<< $2`
+	eExcl=`sed -n 's/dExcl=\(.*\)/\1/p' <<< $2`
 	eExcl=`echo $eExcl | sed 's/\s/\\\|/g'`
-	echo $eExcl
+	#echo $eExcl
 
 	# Check if there are no excluded directories provided
 	if [[ -z "$eExcl" ]] 
@@ -99,7 +99,7 @@ func1(){
 
 		# Get list of all directories recursively after filtering the excluded directories
 		dl=`ls -R ${iPath} | grep ":$" | sed 's/://g'`
-		echo "if" 
+		#echo "if" 
 
 	else
 
@@ -110,6 +110,12 @@ func1(){
 
 	#echo $dl
 
+
+	# Global size of the files in all the directories
+	gs=0
+
+	# Global file count for all the files in all the directories
+	gc=0
 
 	# Loop over all the directory list
 	for dir in $dl
@@ -128,6 +134,7 @@ func1(){
 			echo "no files, probably a directory" $fc
 
 		else
+
 
 			# Get list of files in the current directory
 			arr=`ls -ltrh $dir | awk '{print $9}' | sed -n 's/\(.*\)\.\(.*\)/\2/p' | tr "\n" "," | sed 's/,$//g'`
@@ -153,21 +160,31 @@ func1(){
 				#echo $dir
 				#echo $ext
 
+				# Counter for file in the given directory
+				cc=0
+
+				# File size in the given directory
+				cs=0
+
+
 				# Loop over extensions
 				for e in $ext
 				do
 
-					# Counter for files 
-					cc=0
+					# Counter for files per extension type
+					ce=0
+
 
 					# Count the number of files and the size
 					fDat=(`ls -lt $dir/*.$e 2> /dev/null | awk '{sum+=$5}END{print NR, sum/1024/1024}'`)
 
-					let cc=cc+${fDat[0]}
+					let ce=ce+${fDat[0]}
+					let cc=cc+ce
 
-					#echo ${fDat[1]} MB
-					#echo "cc: "$cc
-						
+					# file size per extension
+					fss=$(printf "%4.10f" ${fDat[1]})
+					cs=$(echo "scale=5; $cs + ${fss}" | bc -l)
+
 
 					# File count by extension
 					ec=`ls $dir/*.$e | wc -l`
@@ -175,6 +192,9 @@ func1(){
 					echo "$e:${fDat[0]}, size:${fDat[1]} MB" | tr "\n" "\t"
 
 				done
+					echo -e "\ntotal:$cc, size: $cs MB"
+					gs=$(echo "scale=5; $gs + ${cs}" | bc -l)
+					let gc=gc+cc
 		
 		echo ;
 			fi
@@ -183,6 +203,9 @@ func1(){
 		echo ;
 
 	done
+	echo "==============================================="
+	echo "total:$gc, size:$gs MB"
+	echo "==============================================="
 }
 
 
@@ -193,8 +216,8 @@ func1(){
 # Unit tests for GenJulianDate
 #GenJulianDate 2018-02-01
 
-func1 iPath="/store/"  \
-      eExcl="data relval group" \
+func1 iPath=~/Research  \
+      dExcl="yes" \
       sDate=2012-01-01 \
       eDate=2017-02-15 \
 
