@@ -19,10 +19,12 @@ The results look as shown below.
 ```
 Path: /a1/b1/c1/d1
 sh:1, size:0.00155735 MB        C:3, size:0.00381374 MB
+total:4, size: .00040000 MB
 
 Path: /a2/b2/c2/d2
-sh:1, size:0.00155735 MB        C:3, size:0.00381374 MB
-png:9, size:0.117346 MB
+pkl:1, size:0.0238075 MB        py:2, size:0.010231 MB  tgz:2, size:0.491813 MB
+total:5, size: .5258515000 MB
+
 
 Path: /a3/b3/c3/d3
 no files, probably a directory 0
